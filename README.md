@@ -2,7 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+![Signup Form](public/images/logo-xs.png)
+ <img src="public/images/Screenshot_35.png" alt="Signup Form" width="200"/>
+
+
 First, run the development server:
+
+A simple application on Nextjs authentication authorization using next-auth.js
+It consists of 3 different roles, each role has its own page
+Of course, the header should appear according to the type of role, but the goal is to know how to use next-auth.js
+You can be a contributor to the project
+
 ```bash
 npm run dev
 # or
