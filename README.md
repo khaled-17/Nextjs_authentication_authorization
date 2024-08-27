@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ![alt text](https://github.githubassets.com/images/icons/emoji/unicode/1f510.png) next-authentication-authorization
+
+## Example showing a custom login page using NextAuth.js with credentials. It is used in more than one role With built in authentication authorization
+
+### Feel free to use it as you like 💖.
+
 
 ## Getting Started
 
@@ -7,12 +12,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # [Demo🌋](https://thenextauthjs.vercel.app/)  
 
-First, run the development server:
+
 
 A simple application on Nextjs authentication authorization using next-auth.js
 It consists of 3 different roles, each role has its own page
 Of course, the header should appear according to the type of role, but the goal is to know how to use next-auth.js
 You can be a contributor to the project
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+---
+
+First, run the development server:
+
 
 ```bash
 npm run dev
@@ -34,10 +45,9 @@ NEXTAUTH_URL=http://localhost:3000/
 >Make sure that your project is running on http://localhost:3000 and nothing else. If your project is running on another port or url , you must put it in a .env 
 
 >Problems will appear when changing the port and URL without changing them in the .env file.
-
-![Signup Form](public/images/Screenshot_32.png)
-![Signup Form](public/images/Screenshot_33.png)
-![Signup Form](public/images/Screenshot_34.png)
+ ![Signup Form](public/images/Screenshot_38.png)
+![Signup Form](public/images/Screenshot_39.png)
+![Signup Form](public/images/Screenshot_40.png)
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -54,6 +64,17 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+
+### 📚 References
+- 🔗 [NextAuth.js Official Site](https://next-auth.js.org/)
+- 🔗 [Next.js Official Site](https://nextjs.org/)
+- 🔗 [NextAuth.js - Advanced Middleware Configuration](https://next-auth.js.org/configuration/nextjs#advanced-usage)
+- 🔗 [NextAuth.js - Persisting the Role](https://authjs.dev/guides/basics/role-based-access-control#persisting-the-role)
+- 🔗 [NextAuth.js - TypeScript Module Augmentation](https://next-auth.js.org/getting-started/typescript#module-augmentation
+)
+- 🔗 [NextAuth.js - JWT & Session Callbacks](https://next-auth.js.org/configuration/callbacks#jwt-callback)
+- 🔗 [Next.js Rewrites](https://nextjs.org/docs/app/api-reference/functions/next-response#rewrite)
 
 ## Deploy on Vercel
 
