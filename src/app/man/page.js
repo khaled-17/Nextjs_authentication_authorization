@@ -2,9 +2,10 @@ import React from 'react';
 
 const Page = () => {
     return (
-        <div>
-            man  page
-        </div>
+        
+        <div className="  h-full w-full flex-col flex justify-center items-center">
+        <h1 className="text-3xl"> man    page</h1>
+      </div>
     );
 }
 

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Page = () => {
-    return (
-        <div>
-            developer  page
-        </div>
-    );
-}
+  return (
+       <div className="  h-full w-full flex-col flex justify-center items-center">
+        <h1 className="text-3xl"> developer page</h1>
+      </div>
+   );
+};
 
 export default Page;

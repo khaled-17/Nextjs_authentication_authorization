@@ -1,17 +1,51 @@
 "use client";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useState } from "react";
 
 export default function Home() {
   const { data: session } = useSession();
 
+  const [formData, setFormData] = useState({
+    email: "name@gmail.com",
+    name: "hero man",
+    password: "123456",
+    role: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    signIn('credentials', formData)
+     // const response = await fetch("/api/signup", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(formData),
+    // });
+
+    // const result = await response.json();
+    console.log(formData);
+  };
+
+
   if (session) {
     return (
       <>
-        <p>Welcome {session?.user?.name}. Signed In As {session.user?.role}</p>
-        <p>{session.user?.email}</p>
+         <p> Welcome: {session.user?.email}</p>
+        <p> email: {session.user?.email}</p>
+        <p> role: {session.user?.role}</p>
 
-        <button onClick={() => signOut()}>
-      تسجيل الخروج
+        <button className="bg-red-500 text-white  p-3 m-4 rounded-lg" onClick={() => signOut()}>
+        signOut 
     </button>
       </>
     );
@@ -19,26 +53,69 @@ export default function Home() {
   
   return (
     <div className="flex flex-col gap-8">
-    <button onClick={() => signOut()}>Sign out</button>
-      <p>Not Signed In</p>
-      <button className="bg-green-300" onClick={() => signIn('credentials', {
-        email: "admin@gmail.com",
-        name: "admin",
-        password: "password",
-        role: "admin",
-      })}>Sign in as Admin</button>
-      <button className="bg-green-300" onClick={() => signIn('credentials', {
-        email: "developer@gmail.com",
-        name: "developer",
-        password: "password",
-        role: "developer",
-      })}>Sign in as Developer</button>
-      <button className="bg-green-300" onClick={() => signIn('credentials', {
-        email: "man@gmail.com",
-        name: "man",
-        password: "password",
-        role: "man",
-      })}>Sign in as Man</button>
+  
+
+<form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8">
+      <div className="mb-4">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          Name
+        </label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+          Password
+        </label>
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="role" className="block text-sm font-medium text-gray-700">
+          Role
+        </label>
+        <select
+        required
+          name="role"
+          value={formData.role}
+          onChange={handleChange}
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+        >
+          <option value=""></option>
+          <option value="admin">Admin</option>
+          <option value="developer">Developer</option>
+          <option value="man">Man</option>
+        </select>
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md"
+      >
+        Submit
+      </button>
+    </form>
     </div>
   );
 }

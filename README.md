@@ -3,7 +3,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 First, run the development server:
-
 ```bash
 npm run dev
 # or
@@ -13,6 +12,22 @@ pnpm dev
 # or
 bun dev
 ```
+second add .env
+```
+NEXTAUTH_SECRET=98E3B2CC28F61492C6934531C828C
+NEXTAUTH_URL=http://localhost:3000/
+
+```
+ 
+> **⚠️ Very Important Alert**  
+>Make sure that your project is running on http://localhost:3000 and nothing else. If your project is running on another port or url , you must put it in a .env 
+
+>Problems will appear when changing the port and URL without changing them in the .env file.
+
+![Signup Form](public/images/Screenshot_32.png)
+![Signup Form](public/images/Screenshot_33.png)
+![Signup Form](public/images/Screenshot_34.png)
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
